@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DON'T THINK I AM NOT MAD AT YOU ANYMORE</title>
+    <style>
+        body {
+            font-family: "Cursive", sans-serif;
+            text-align: center;
+            background-color: #f8f0e3;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .bouquet {
+            width: 400px;
+            cursor: pointer;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+        .message-box {
+            background: #FFC0CB;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            max-width: 80%;
+            border: 3px solid #A0153E;
+            color: white;
+        }
+        .close-btn {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: #ff6b6b;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #A0153E;">DON'T THINK I AM NOT MAD AT YOU ANYMORE</h1>
+    <div class="container">
+        <img src="https://i.postimg.cc/KjSTpmz2/Web-Photo-Editor-Photoroom.png" class="bouquet" onclick="showRandomMessage()">
+    </div>
+    <div class="overlay" id="overlay">
+        <div class="message-box">
+            <p id="message"></p>
+            <button class="close-btn" onclick="closeMessage()">Close</button>
+        </div>
+    </div>
+    <script>
+        const messages = [
+            "Manu, I am madly in love with you. You are in my thoughts every moment, my heart beats in rhythm with yours. I crave your presence, your warmth, your everything.",
+            "Stop making me feel like I don't deserve your time. I am still here, still loving you. Don't push me away like I'm not your priority anymore.",
+            "I miss you. I miss your presence, the way you pamper me, the way you make me feel like the most precious person in your world.",
+            "I'm still mad at you! You didn't even come and persuade me to talk to you. How could you?",
+            "You don’t call me by sweet names anymore, and I hate that. It hurts more than you know.",
+            "Even though you are my home, my safe place, my everything, at least don’t make me go insane like my father did.",
+            "You annoy me a lot with your actions, and you know what? I love that. I genuinely love that about you.",
+            "You have gone through a lot, and so have I. I respect you for choosing me, for staying despite it all.",
+            "I know I’m stubborn, but I love when you try, Manu. At least try.",
+            "If you don’t choose to love me, I will love you loudly and openly until you get annoyed and have no choice but to acknowledge it."
+        ];
+
+        function showRandomMessage() {
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById("message").innerText = messages[randomIndex];
+            document.getElementById("overlay").style.display = "flex";
+        }
+
+        function closeMessage() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>
